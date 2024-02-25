@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     private float moveSpeed = 5f;
+    public TilemapCollider2D obstacle;
 
     // Canvas
     public Canvas canvas;
     public Button playAgainButton;
+    public EventSystem eventSystem;
 
     // Roll
     private float rollBoost = 3f;
@@ -20,7 +23,7 @@ public class Player : MonoBehaviour
     private bool rollOnce = false;
     private bool isDelay = false;
     private float rollDelay = 0f;
-    public float RollDelayTime = 2f;
+    public float RollDelayTime = 5f;
     private readonly float ROLL_TIME = 0.35f;
 
     private Animator animator;
@@ -37,8 +40,6 @@ public class Player : MonoBehaviour
     // Hit
     private float HitAnimator = 0.2f;
     private float _hitAnimator = 0f;
-
-    public TilemapCollider2D obstacle;
 
     void Start()
     {
@@ -72,6 +73,19 @@ public class Player : MonoBehaviour
         } else
         {
             animator.SetBool("IsHit", false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Exp"))
+        {
+            PickUpExp ex = FindObjectOfType<PickUpExp>();
+            LootBag loot = collision.GetComponent<LootBag>();
+            float expValue = loot.currentLoot.exp;
+            ex.currentExp += expValue;
+            ex.ExperienceController();
+            Destroy(collision.gameObject);
         }
     }
 
@@ -119,14 +133,20 @@ public class Player : MonoBehaviour
             isDelay = true;
             rollOnce = true;
             animator.SetBool("Roll", rollOnce);
-            obstacle.isTrigger = true;
+            foreach (var item in obstacle.GetComponentsInChildren<BoxCollider2D>())
+            {
+                item.isTrigger = true;
+            }
         }
         if (rollTime <= 0 && rollOnce == true)
         {
             moveSpeed = 5f;
             rollOnce = false;
             animator.SetBool("Roll", rollOnce);
-            obstacle.isTrigger = false;
+            foreach (var item in obstacle.GetComponentsInChildren<BoxCollider2D>())
+            {
+                item.isTrigger = false;
+            }
         }
         else
         {
@@ -147,14 +167,10 @@ public class Player : MonoBehaviour
     private void OnFinishDeadAnimation()
     {
         canvas.sortingOrder = 2;
-        playAgainButton.onClick.AddListener(() => PlayAgain());
-        Time.timeScale = 0f;
-    }
-    
-    private void PlayAgain()
-    {
-        canvas.sortingOrder = -1;
-        Time.timeScale = 1f;
+        MenuGame menu = eventSystem.GetComponent<MenuGame>();
+        playAgainButton.onClick.AddListener(menu.NewGame);
+        playAgainButton.onClick.AddListener(() => { Time.timeScale = 1; });
+        Time.timeScale = 0;
     }
 
     private void playerDead()

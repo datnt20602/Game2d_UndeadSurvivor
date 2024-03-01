@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a2b3827d189a747be4bdf59475b30d, type: 3}
+  m_Name: Item 1
+  m_EditorClassIdentifier: 
+  itemType: 0
+  itemId: 1
+  itemName: Sung ak
+  itemDesc: Damage Increase
+  itemIcon: {fileID: 563336626, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
+  baseDamage: 3
+  baseCount: 0
+  damages:
+  - 1
+  - 2
+  - 3
+  - 3
+  counts: 01000000010000000100000002000000
+  projectTile: {fileID: 1072823277625809403, guid: 8231ed886fbd776419a2052ade643f21, type: 3}

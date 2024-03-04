@@ -14,9 +14,11 @@ public class Health : MonoBehaviour
 	public bool isDead = false;
 
 	public bool camShake = false;
+	KillCounter killCounter;
 
 	private void Start()
 	{
+		killCounter = GameObject.Find("KCO").GetComponent<KillCounter>();
 		currentHealth = maxHealth;
 
 		if (healthBar != null)
@@ -38,6 +40,7 @@ public class Health : MonoBehaviour
 					//FindObjectOfType<Killed>().UpdateKilled();
 					//FindObjectOfType<PlayerExp>().UpdateExperience(UnityEngine.Random.Range(1, 4));
 					Destroy(this.gameObject, 0.125f);
+					killCounter.addKill();
 					GetComponent<LootBag>().InstantiateLoot(transform.position);
 				}
 				isDead = true;

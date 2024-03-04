@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enermy
   - Obstacle
+  - HealthBar
+  - enemy
+  - Exp
   layers:
   - Default
   - TransparentFX

@@ -13,13 +13,13 @@ public class Bullet : MonoBehaviour
 		if(collision.CompareTag("Player") && !isPlayerBullet)
 		{
 			int damage = Random.Range(minDamage, maxDamage);
-			collision.GetComponent<PlayerComponent>().TakeDamage(damage);
+			collision.GetComponent<Player>().TakeDamage(damage);
 			Destroy(this.gameObject);
 		}
-		if (collision.CompareTag("enemy") && isPlayerBullet)
+		if (collision.CompareTag("Enermy") && isPlayerBullet)
 		{
 			int damage = Random.Range(minDamage, maxDamage);
-			collision.GetComponent<EnemyMovement>().TakeDamage(damage);
+			collision.GetComponent<EnermyController>().TakeDamage(damage);
 			Destroy(this.gameObject);
 		}
 	}

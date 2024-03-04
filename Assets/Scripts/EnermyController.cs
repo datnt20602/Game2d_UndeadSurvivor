@@ -14,6 +14,7 @@ public class EnermyController : MonoBehaviour
 
     public float purpleHeal = 80f;
     public float purpleDamage = 10f;
+    public float yellowDamage = 20f;
 
     Health enemyHealth;
 
@@ -53,6 +54,9 @@ public class EnermyController : MonoBehaviour
         if (isCloseCombat)
         {
             player.TakeDamage(purpleDamage);
+        } else
+        {
+            player.TakeDamage(yellowDamage);
         }
     }
 

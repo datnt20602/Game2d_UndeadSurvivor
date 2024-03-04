@@ -257,7 +257,7 @@ MonoBehaviour:
   radius: 0.5
   height: 2
   canMove: 1
-  maxSpeed: 1
+  maxSpeed: 3
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2
@@ -313,6 +313,7 @@ MonoBehaviour:
   yellowHeal: 50
   purpleHeal: 80
   purpleDamage: 10
+  yellowDamage: 20
 --- !u!114 &2576982825875342014
 MonoBehaviour:
   m_ObjectHideFlags: 0

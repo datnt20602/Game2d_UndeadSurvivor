@@ -51,9 +51,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Pause game and resume
-        pauseAndResume();
-
         // Player dead
         playerDead();
 
@@ -89,18 +86,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void pauseAndResume()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Time.timeScale = 0f;
-        }
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            Time.timeScale = 1f;
-        }
-    }
-
     private void playerMove()
     {
         moveInput.x = Input.GetAxis("Horizontal");
@@ -133,6 +118,7 @@ public class Player : MonoBehaviour
             isDelay = true;
             rollOnce = true;
             animator.SetBool("Roll", rollOnce);
+            obstacle.isTrigger = true;
             foreach (var item in obstacle.GetComponentsInChildren<BoxCollider2D>())
             {
                 item.isTrigger = true;
@@ -143,6 +129,7 @@ public class Player : MonoBehaviour
             moveSpeed = 5f;
             rollOnce = false;
             animator.SetBool("Roll", rollOnce);
+            obstacle.isTrigger = false;
             foreach (var item in obstacle.GetComponentsInChildren<BoxCollider2D>())
             {
                 item.isTrigger = false;

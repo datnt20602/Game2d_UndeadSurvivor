@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1038798576760744588}
   - component: {fileID: 6276930314919258245}
   - component: {fileID: 3878426723100647863}
+  - component: {fileID: 8039858882479710233}
   m_Layer: 0
   m_Name: yellow_devil
   m_TagString: Enermy
@@ -260,3 +261,21 @@ MonoBehaviour:
   yellowHeal: 50
   purpleHeal: 80
   purpleDamage: 10
+--- !u!114 &8039858882479710233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2188632901384893924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f8d78f53249ad49a339cba73297c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 40
+  currentHealth: 0
+  healthBar: {fileID: 0}
+  safeTimeDuration: 0
+  isDead: 0
+  camShake: 0

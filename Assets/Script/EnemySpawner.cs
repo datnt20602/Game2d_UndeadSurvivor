@@ -9,9 +9,9 @@ public class EnemySpawner : MonoBehaviour
 
 	private List<GameObject> enemies = new List<GameObject>();
 
-	public int initialWaveSize = 3; // Số lượng quái vật ban đầu trong mỗi wave
-	public int additionalWaveSize = 2; // Số lượng quái vật được thêm vào mỗi wave sau khi tiêu diệt hết
-	public float timeBetweenWaves = 5.0f; // Thời gian giữa các wave
+	public int initialWaveSize = 10; // Số lượng quái vật ban đầu trong mỗi wave
+	public int additionalWaveSize = 5; // Số lượng quái vật được thêm vào mỗi wave sau khi tiêu diệt hết
+	public float timeBetweenWaves = 3.0f; // Thời gian giữa các wave
 
 	private bool spawningEnemies = true;
 

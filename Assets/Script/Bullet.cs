@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
 	int damage;
 	public int per;
 	Rigidbody2D rigid;
+	
 
 	public void Init(int damage, int per, Vector3 dir)
 	{
@@ -44,6 +45,7 @@ public class Bullet : MonoBehaviour
 			 damage = Random.Range(minDamage, maxDamage);
 			collision.GetComponent<EnemyMovement>().TakeDamage(damage);
 			Destroy(this.gameObject);
+			
 		}
 	}
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public float yellowDevilDamage = 18f;
-    public float playerDamage = 20f;
+    private float playerDamage;
     public bool isFromPlayer;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,7 +25,7 @@ public class BulletController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerDamage = FindObjectOfType<Player>().playerDamage;
     }
 
     // Update is called once per frame

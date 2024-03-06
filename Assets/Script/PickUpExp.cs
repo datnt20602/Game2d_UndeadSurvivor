@@ -27,20 +27,20 @@ public class PickUpExp : MonoBehaviour
 
 	public void ExperienceController()
 	{
-
 		if (currentExp >= targetExp) //level up
 		{
 
 			currentExp = currentExp - targetExp;
 			//expProgressBar.fillAmount = (currentExp / targetExp);
 			level++;
-			targetExp += 50;
+			
 			if (chooseItemUI != null)
 			{
 				Next();
 				chooseItemUI.SetActive(true); // Hiển thị giao diện chooseItem khi tăng cấp
 			}
-		}
+            targetExp += 50;
+        }
 		levelText.text = "Level " + level.ToString();
 		expProgressBar.fillAmount = (currentExp / targetExp);
 

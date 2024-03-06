@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
 
 	private List<GameObject> enemies = new List<GameObject>();
 
-	public int initialWaveSize = 10; // Số lượng quái vật ban đầu trong mỗi wave
+	public int initialWaveSize = 5; // Số lượng quái vật ban đầu trong mỗi wave
 	public int additionalWaveSize = 5; // Số lượng quái vật được thêm vào mỗi wave sau khi tiêu diệt hết
 	public float timeBetweenWaves = 3.0f; // Thời gian giữa các wave
 
@@ -24,6 +24,15 @@ public class EnemySpawner : MonoBehaviour
 
 	private IEnumerator SpawnEnemies()
 	{
+		_enemyPrefab.GetComponent<Health>().maxHealth = 1.2f * _enemyPrefab.GetComponent<Health>().maxHealth;
+        EnermyController enermyController = _enemyPrefab.GetComponent<EnermyController>();
+		if (enermyController.isCloseCombat)
+		{
+			enermyController.purpleDamage = 1.2f * enermyController.purpleDamage;
+        } else
+		{
+			enermyController.yellowDamage = 1.2f * enermyController.yellowDamage;
+		}
 		while (spawningEnemies)
 		{
 			// Sinh quái vật trong wave hiện tại

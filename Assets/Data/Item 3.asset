@@ -14,17 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 2
   itemId: 3
-  itemName: MauToiDa
-  itemDesc: 'Max Health Increease
-
-'
+  itemName: "M\xE1u t\u1ED1i \u0111a"
+  itemDesc: "T\u0103ng m\xE1u t\u1ED1i \u0111a th\xEAm 100"
   itemIcon: {fileID: 927338625, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
   baseDamage: 0
-  baseCount: 0
+  baseCount: 4
   damages:
   - 0
   - 0
   - 0
   - 0
-  counts: 00000000000000000000000000000000
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  counts: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   projectTile: {fileID: 0}

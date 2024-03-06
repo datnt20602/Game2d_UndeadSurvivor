@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 {
     private float moveSpeed = 5f;
     public TilemapCollider2D obstacle;
+    public float playerDamage = 20f;
 
     // Canvas
     public Canvas canvas;
@@ -52,7 +53,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         // Player dead
-        playerDead();
+        //playerDead();
 
         // Rotate player
         RotatePlayer();

@@ -14,15 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   itemId: 2
-  itemName: Giay
-  itemDesc: 'Decrease rolling delay time '
+  itemName: "Nh\xE0o l\u1ED9n"
+  itemDesc: "Gi\u1EA3m th\u1EDDi gian ch\u1EDD k\u0129 n\u0103ng nh\xE0o l\u1ED9n
+    \u0111i 20%"
   itemIcon: {fileID: -966295699, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
   baseDamage: 0
-  baseCount: 0
+  baseCount: 4
   damages:
   - 0.1
   - 0.2
   - 0.3
   - 0.4
-  counts: 00000000000000000000000000000000
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  counts: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   projectTile: {fileID: 0}

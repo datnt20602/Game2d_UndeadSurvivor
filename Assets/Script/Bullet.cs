@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public int minDamage;
     public int maxDamage;
     public bool isPlayerBullet;
+	public bool isWeaponMelee;
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -20,7 +21,10 @@ public class Bullet : MonoBehaviour
 		{
 			int damage = Random.Range(minDamage, maxDamage);
 			collision.GetComponent<EnermyController>().TakeDamage(damage);
-			Destroy(this.gameObject);
+			if (!isWeaponMelee)
+			{
+                Destroy(this.gameObject);
+            }
 		}
 	}
 }

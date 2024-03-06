@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-	public int maxHealth;
+	public float maxHealth;
 	[HideInInspector] public float currentHealth;
 
 	public HealthBar healthBar;

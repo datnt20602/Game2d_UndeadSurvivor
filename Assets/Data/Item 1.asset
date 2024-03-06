@@ -14,15 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   itemId: 1
-  itemName: Sung ak
-  itemDesc: Damage Increase
+  itemName: "V\u0169 kh\xED"
+  itemDesc: "T\u0103ng s\xE1t th\u01B0\u01A1ng cho v\u0169 kh\xED c\u1EE7a b\u1EA1n
+    th\xEAm 20%"
   itemIcon: {fileID: 563336626, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
   baseDamage: 3
-  baseCount: 0
+  baseCount: 4
   damages:
   - 1
   - 2
   - 3
   - 3
-  counts: 01000000010000000100000002000000
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  counts: 0100000001000000010000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000
   projectTile: {fileID: 1072823277625809403, guid: 8231ed886fbd776419a2052ade643f21, type: 3}

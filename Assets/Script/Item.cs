@@ -8,7 +8,6 @@ public class Item : MonoBehaviour
 	public ItemData data;
 
 	public int level;
-	public Weapon weapon;
 	public PickUpExp pickUpExp; // Tham chiếu đến script PickUpExp để gọi phương thức ẩn giao diện
 
 
@@ -26,7 +25,6 @@ public class Item : MonoBehaviour
 		textName = texts[1];
 		textDesc = texts[2];
 		textName.text = data.itemName;
-
 	}
 
 	void OnEnable()
@@ -34,7 +32,9 @@ public class Item : MonoBehaviour
 		switch (data.itemType)
 		{
 			case ItemData.ItemType.Melee:
-			case ItemData.ItemType.Range:
+                textDesc.text = string.Format(data.itemDesc, data.damages[level]*100);
+				break;
+            case ItemData.ItemType.Range:
 				textDesc.text = string.Format(data.itemDesc, data.damages[level] * 100, data.counts[level]);
 				break;
 
@@ -62,13 +62,17 @@ public class Item : MonoBehaviour
 		switch (data.itemType)
 		{
 			case ItemData.ItemType.Melee:
+				FindObjectOfType<WeaponMelee>().AddElement();
 				break;
 			case ItemData.ItemType.Range:
-				break;
+				FindObjectOfType<Player>().playerDamage = 1.4f * FindObjectOfType<Player>().playerDamage;
+                break;
 			case ItemData.ItemType.Shoe:
-				break;
+                FindObjectOfType<Player>().RollDelayTime = FindObjectOfType<Player>().RollDelayTime * (1 - 0.2f);
+                break;
 			case ItemData.ItemType.Heal:
-				break;
+                FindObjectOfType<Player>().totalHeal = FindObjectOfType<Player>().totalHeal + 100f;
+                break;
 		}
 		level++;
 
